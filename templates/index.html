@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Groundwater Chatbot</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar on the left -->
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li onclick="window.location.href='/'">Home</li>
+                <li onclick="window.location.href='/'">About</li>
+                
+                <li onclick="window.location.href='/'">Help</li>
+            </ul>
+        </aside>
+
+        <!-- Right side: Chat area -->
+        <div class="main-content">
+            <!-- Chat area -->
+            <div class="chat-container">
+                <div id="messages" class="chat-box"></div>
+
+                <div class="input-container">
+                    <input id="user_input" placeholder="Type your message..." />
+                    <button id="send">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        const socket = io();
+
+        document.getElementById('send').onclick = function() {
+            const userInput = document.getElementById('user_input').value;
+            if (userInput.trim()) {
+                addMessage("You", userInput, "user");
+                socket.emit('message', userInput);
+                document.getElementById('user_input').value = '';
+            }
+        };
+
+        socket.on('response', function(msg) {
+            addMessage("Bot", msg, "bot");
+        });
+
+        function addMessage(sender, text, type) {
+            const messageContainer = document.createElement('div');
+            messageContainer.classList.add('message', type);
+            messageContainer.innerHTML = `<strong>${sender}:</strong> ${text}`;
+            document.getElementById('messages').appendChild(messageContainer);
+            document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+        }
+
+        document.getElementById('user_input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const userInput = document.getElementById('user_input').value;
+                if (userInput.trim()) {
+                    addMessage("You", userInput, "user");
+                    socket.emit('message', userInput);
+                    document.getElementById('user_input').value = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

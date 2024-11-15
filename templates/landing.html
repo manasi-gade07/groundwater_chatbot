@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Groundwater Chatbot</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <span class="navbar-title">GWater</span>
+        <span class="navbar-links">
+            <a href="/">Home</a>
+            <a href="#about">About</a>
+            <a href="#">Help</a>
+        </span>
+    </nav>
+
+    <!-- Landing page content -->
+    <div class="landing-container">
+        <div class="landing-content">
+            <h1>Welcome to the Groundwater Chatbot</h1>
+            <p>Ask questions about groundwater, monitoring, and sustainability!</p>
+            <div class="button-container">
+                <button onclick="window.location.href='/index'">Start Chatting</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="about-container">
+        <h2>About Groundwater Chatbot</h2>
+        <div class="about-cards">
+            <div class="card">
+                <h3>Instant Assistance</h3>
+                <p>Our chatbot provides instant responses to your queries about groundwater levels, sustainability, and water conservation methods. You can ask anything about groundwater, and the bot will provide accurate and helpful information.</p>
+            </div>
+            <div class="card">
+                <h3>24/7 Availability</h3>
+                <p>The chatbot is available around the clock to answer any questions related to groundwater. Whether it's day or night, the bot will be there to assist you with groundwater-related topics.</p>
+            </div>
+            <div class="card">
+                <h3>Educational Insights</h3>
+                <p>Learn about groundwater monitoring techniques, the importance of groundwater sustainability, and best practices for water conservation. The chatbot will guide you with valuable educational resources and insights.</p>
+            </div>
+        </div>
+    </div>
+
+   <!-- Sample Interaction Section -->
+<div class="sample-code-container">
+    <h2>Sample Interaction</h2>
+    <div class="sample-box">
+        <h3>Example Input</h3>
+        <pre>User: How can I conserve groundwater?</pre>
+        <h3>Bot Response</h3>
+        <pre>Bot: Here are some effective methods to conserve groundwater:
+1. Reduce water usage.
+2. Fix leaks in plumbing.
+3. Practice rainwater harvesting.
+4. Avoid over-irrigation in agriculture.</pre>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <p>&copy; 2024 Groundwater Chatbot. All rights reserved.</p>
+    <a href="#about" class="footer-link">About</a> | <a href="#" class="footer-link">Privacy Policy</a>
+</footer>
+</body>
+</html>

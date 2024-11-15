@@ -1,0 +1,305 @@
+/* Basic styling for body and overall container */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+    background-color: #000000; /* Black background for dark mode */
+    color: #FFFFFF; /* White text for high contrast */
+    font-size: 15px; /* Reduced font size */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #1A1A1A; /* Very dark gray for sidebar */
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.sidebar h2 {
+    font-size: 18px; /* Reduced font size */
+    margin-bottom: 30px;
+    color: #FFFFFF;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar li {
+    padding: 15px 0;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+
+.sidebar li:hover {
+    background-color: #333333; /* Lighten on hover */
+    color: #FFFFFF;
+}
+
+.sidebar .active-tab {
+    background-color: #333333; /* Lighter gray for active tab */
+    color: #FFFFFF;
+}
+
+/* Main content styling */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000; /* Match body background */
+}
+
+/* Navbar styling */
+.navbar {
+    color: #FFFFFF;
+    padding: 10px 20px; /* Reduced padding */
+    background: #1A1A1A; /* Dark gray for navbar */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-title {
+    font-size: 20px; /* Reduced font size */
+    font-weight: 700;
+}
+
+.navbar-links a {
+    color: #FFFFFF;
+    margin-left: 15px; /* Reduced margin */
+    text-decoration: none;
+    font-size: 14px; /* Reduced font size */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #BBBBBB; /* Slightly lighter gray on hover */
+    text-decoration: underline;
+}
+
+/* Chat container styling */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Reduced padding */
+    background-color: #1A1A1A; /* Dark gray for chat area */
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #333333; /* Darker gray for chat box */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Styling for user and bot messages */
+.message {
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 12px;
+    max-width: 80%;
+}
+
+/* User message styling */
+.message.user {
+    background-color: #444444; /* Dark gray for user messages */
+    color: #FFFFFF;
+    align-self: flex-end;
+}
+
+/* Bot message styling */
+.message.bot {
+    background-color: #222222; /* Darker gray for bot messages */
+    color: #FFFFFF;
+    align-self: flex-start;
+}
+
+/* Input container styling */
+.input-container {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px; /* Reduced padding */
+    border: 1px solid #444444; /* Dark gray border */
+    border-radius: 20px;
+    font-size: 15px;
+    outline: none;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+input:focus {
+    border-color: #777777;
+}
+
+button {
+    background-color: #FFFFFF; /* White for button contrast */
+    color: #000000; /* Black text on button */
+    border: none;
+    padding: 15px 30px; /* Increased padding */
+    font-size: 1em; /* Consistent font size */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #777777; /* Light gray hover for button */
+}
+
+/* Landing page styling */
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Reduced margin */
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.landing-content h1 {
+    font-size: 2.2em; /* Reduced font size */
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.landing-content p {
+    font-size: 1.1em; /* Reduced font size */
+    margin-bottom: 30px;
+    color: #BBBBBB;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* About Section Styling */
+.about-container {
+    padding: 40px 20px; /* Reduced padding */
+    text-align: center;
+}
+
+.about-container h2 {
+    font-size: 1.5em; /* Reduced font size */
+    margin-bottom: 30px;
+    color: #FFFFFF;
+}
+
+.about-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #333333;
+    padding: 15px; /* Reduced padding */
+    border-radius: 8px;
+    color: #FFFFFF;
+    text-align: left;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    font-size: 1.4em; /* Reduced font size */
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1em; /* Reduced font size */
+    color: #BBBBBB;
+}
+
+/* Sample Code Section Styling */
+.sample-code-container {
+    background-color: #222222; /* Dark gray for background */
+    padding: 20px;
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.sample-box {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.sample-box h3 {
+    font-size: 1.2em; /* Reduced font size */
+}
+
+.sample-box pre {
+    font-size: 1em; /* Reduced font size */
+    background-color: #111111; /* Darker background for code */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #222222; /* Dark background for footer */
+    color: #FFFFFF; /* White text for contrast */
+    padding: 20px 0; /* Padding for spacing */
+    text-align: center;
+    font-size: 14px; /* Reduced font size */
+    margin-top: 40px; /* Space above the footer */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px; /* Reduced font size */
+}
+
+.footer-link {
+    color: #BBBBBB; /* Light gray text for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.footer-link:hover {
+    color: #FFFFFF; /* Change color on hover */
+    text-decoration: underline;
+}
